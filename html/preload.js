@@ -1,3 +1,5 @@
+const { ipcRenderer } = require('electron');
+
 window.addEventListener('DOMContentLoaded', () => {
     const replaceText = (selector, text) => {
         const element = document.getElementById(selector);
@@ -10,8 +12,11 @@ window.addEventListener('DOMContentLoaded', () => {
         replaceText(`${type}-version`, process.versions[type]);
     }
 
-    $('#btn-test').click(function () {
-        alert('test');
-        console.log('lalala');
+    $('#minimize').on('click', () => {
+        ipcRenderer.send('user-input', 'minimize');
+    });
+
+    $('#close').on('click', () => {
+        ipcRenderer.send('user-input', 'close');
     });
 });
