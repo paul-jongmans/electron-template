@@ -2,7 +2,7 @@
     "name": "electron-template",
     "version": "1.0.0",
     "description": "A new electron app with small style changes",
-    "main": "main.js",
+    "main": "src/main.js",
     "author": "Paul Jongmans",
     "license": "MIT",
     "scripts": {
